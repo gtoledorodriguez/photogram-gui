@@ -18,9 +18,9 @@ class PhotosController < ApplicationController
 
   def create
     @the_photo = Photo.new
-    @the_photo.image = params.fetch("input_image")
-    @the_photo.caption = params.fetch("input_caption")
-    @the_photo.owner_id = params.fetch("input_owner_id")
+    @the_photo.image = params.fetch("query_image")
+    @the_photo.caption = params.fetch("query_caption")
+    @the_photo.owner_id = params.fetch("query_owner_id")
 
     @the_photo.save
     redirect_to("/photos/#{@the_photo.id}>")
